@@ -34,3 +34,44 @@ nav {
     max-width: 80vw;
     margin: 25px auto;
 }
+
+table, th, tr, td {
+    border: 1px solid;
+    margin: 25px 0px;
+    border-collapse: collapse;
+    padding: 10px 5px;
+    text-align: left;
+}
+
+.delete-btn {
+    background-color: darkred;
+    color: white;
+    border-radius: 5px;
+    border: 2px solid pink;
+    cursor: pointer;
+    padding: 5px 15px;
+}
+
+.save-btn {
+    background-color: greenyellow;
+    color: black;
+    border-radius: 5px;
+    border: 2px solid green;
+    cursor: pointer;
+    padding: 5px 15px;
+    width: 150px;
+    margin: 10px 0px;
+}
+
+.form-input {
+    padding: 5px 0px;
+}
+
+.form-label {
+    margin: 10px;
+}
+
+.copy {
+    cursor: pointer;
+}
+

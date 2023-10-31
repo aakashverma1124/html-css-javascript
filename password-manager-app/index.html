@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Password Manager App</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <nav>
@@ -17,18 +18,7 @@
     <div class="container">
         <h1>Your Password History</h1>
         <table class="table">
-            <tr>
-                <th>Website</th>
-                <th>Username</th>
-                <th>Password</th>
-                <th>Action</th>
-            </tr>
-            <tr>
-                <td>fb.com</td>
-                <td>aakasg</td>
-                <td>12345</td>
-                <td>Delete</td>
-            </tr>
+            
         </table>
 
         <h1>Save Your Password Details</h1>
@@ -36,20 +26,20 @@
 
             <div class="form-label">
                 <label for="website">Website:</label>
-                <input type="text" id="website" name="website" required>
+                <input class="form-input" type="text" id="website" name="website" required>
             </div>
 
             <div class="form-label">
                 <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
+                <input class="form-input" type="text" id="username" name="username" required>
             </div>
              
             <div class="form-label">
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
+                <input class="form-input" type="password" id="password" name="password" required>
             </div>
 
-            <button class="btn" type="submit">Save</button>
+            <button class="save-btn" type="submit">Save</button>
         </form>
 
     </div>
