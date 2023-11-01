@@ -1,3 +1,4 @@
+// masks the orignal password.
 const hidePassword = (password) => {
     let hiddenPassword = "";
     for(let i = 0; i < password.length; i++) {
@@ -6,14 +7,25 @@ const hidePassword = (password) => {
     return hiddenPassword;
 }
 
-const copyContent = (content) => {
+// this functions copies the text in the respective field to the clipboard
+// Added a new parameter to get the id of the particular copy Button.
+const copyContent = (content, id) => {
     navigator.clipboard.writeText(content).then( () => {
-        alert("Copied");
+        
+        let element = document.getElementById(id);
+        let temp = element.innerHTML;
+        element.innerHTML = "Copied!";
+        element.style.backgroundColor = "rgb(109, 209, 109)";
+        setTimeout(() => {
+            element.innerHTML = temp;
+            element.style.backgroundColor = "white";
+        }, 2000);
     }).catch(err => {
         alert("Copying Failed");
     });
 }
 
+// deletes the data from the local storage.
 const deletePasswordData = (index) => {
     let passwordDetails = localStorage.getItem("passwordDetails");
     let passwordData = JSON.parse(passwordDetails);
@@ -23,6 +35,7 @@ const deletePasswordData = (index) => {
     populateSavedPasswordDetails();
 }
 
+// populates the table rows
 const populateSavedPasswordDetails = () => {
     let table = document.querySelector("table")
     let passwordDetails = localStorage.getItem("passwordDetails");
@@ -49,9 +62,9 @@ const populateSavedPasswordDetails = () => {
             row = passwordData[i];
             html += `
                 <tr>
-                    <td style="background-color: ${color};">${row.website} <i onClick="copyContent('${row.website}')" class="fa-regular fa-clipboard copy"></i></td>
-                    <td style="background-color: ${color};">${row.username} <i onClick="copyContent('${row.username}')" class="fa-regular fa-clipboard copy"></i></td>
-                    <td style="background-color: ${color};">${hidePassword(row.password)} <i onClick="copyContent('${row.password}')" class="fa-regular fa-clipboard copy"></i></td>
+                    <td style="background-color: ${color};">${row.website} <button id="copy-btn${i}1" class="copy-btn" onClick="copyContent('${row.website}', 'copy-btn${i}1')"><i class="fa-regular fa-clipboard copy"></i></button></td>
+                    <td style="background-color: ${color};">${row.username} <button id="copy-btn${i}2" class="copy-btn" onClick="copyContent('${row.username}', 'copy-btn${i}2')"><i class="fa-regular fa-clipboard copy"></i></button></td>
+                    <td style="background-color: ${color};">${hidePassword(row.password)} <button id="copy-btn${i}3" class="copy-btn" onClick="copyContent('${row.password}','copy-btn${i}3')" ><i class="fa-regular fa-clipboard copy"></i></button></td>
                     <td style="background-color: ${color};">
                         <button class="delete-btn" onClick="deletePasswordData('${i}')">Delete</button>
                         <button class="delete-btn" onClick="deletePasswordData('${i}')">Edit</button>

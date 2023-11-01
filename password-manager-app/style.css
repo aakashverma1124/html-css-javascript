@@ -43,6 +43,10 @@ table, th, tr, td {
     text-align: left;
 }
 
+th, td {
+    width: 80vw;
+}
+
 .delete-btn {
     background-color: darkred;
     color: white;
@@ -61,6 +65,10 @@ table, th, tr, td {
     padding: 5px 15px;
     width: 150px;
     margin: 10px 0px;
+}
+
+.copy-btn {
+    margin: 0px 0px 0px 10px;
 }
 
 .form-input {
