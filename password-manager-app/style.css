@@ -13,6 +13,11 @@ nav {
     justify-content: space-between;   
 }
 
+.row {
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .navbar {
     display: flex;
     align-items: center;
@@ -52,6 +57,24 @@ table, th, tr, td {
     padding: 5px 15px;
 }
 
+.edit-btn {
+    background-color: rgb(34, 68, 2);
+    color: white;
+    border-radius: 5px;
+    border: 2px solid pink;
+    cursor: pointer;
+    padding: 5px 15px;
+}
+
+.update-btn {
+    background-color: rgb(136, 6, 179);
+    color: white;
+    border-radius: 5px;
+    border: 2px solid pink;
+    cursor: pointer;
+    padding: 5px 15px;
+}
+
 .save-btn {
     background-color: greenyellow;
     color: black;
@@ -73,5 +96,24 @@ table, th, tr, td {
 
 .copy {
     cursor: pointer;
+}
+
+/* Media Queries */
+
+.column {
+    flex : 50%;
+}
+
+@media screen and (max-width: 650px) {
+    .column {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .row {
+        flex-direction: column;
+    }
 }
 

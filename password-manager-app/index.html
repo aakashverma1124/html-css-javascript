@@ -16,31 +16,40 @@
         </ul>
     </nav>
     <div class="container">
-        <h1>Your Password History</h1>
-        <table class="table">
+
+        <div class="row">
+    
+            <div class="column">
+                <h1>Save Your Password Details</h1>
+                <form action="/save" method="post">
+
+                    <div class="form-label">
+                        <label for="website">Website:</label>
+                        <input class="form-input" type="text" id="website" name="website" required>
+                    </div>
+
+                    <div class="form-label">
+                        <label for="username">Username:</label>
+                        <input class="form-input" type="text" id="username" name="username" required>
+                    </div>
+                    
+                    <div class="form-label">
+                        <label for="password">Password:</label>
+                        <input class="form-input" type="password" id="password" name="password" required>
+                    </div>
+
+                    <button class="save-btn" type="submit">Save</button>
+                </form>
+            </div>
+
+            <div class="column">
+                <h1>Your Password History</h1>
+                <table class="table">
+                
+                </table>
+            </div>
             
-        </table>
-
-        <h1>Save Your Password Details</h1>
-        <form action="/save" method="post">
-
-            <div class="form-label">
-                <label for="website">Website:</label>
-                <input class="form-input" type="text" id="website" name="website" required>
-            </div>
-
-            <div class="form-label">
-                <label for="username">Username:</label>
-                <input class="form-input" type="text" id="username" name="username" required>
-            </div>
-             
-            <div class="form-label">
-                <label for="password">Password:</label>
-                <input class="form-input" type="password" id="password" name="password" required>
-            </div>
-
-            <button class="save-btn" type="submit">Save</button>
-        </form>
+        </div>
 
     </div>
     <script src="script.js"></script>
