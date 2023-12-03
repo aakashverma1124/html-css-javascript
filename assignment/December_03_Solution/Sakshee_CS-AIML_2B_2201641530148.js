@@ -14,12 +14,12 @@ class Character {
 }
 
 // Define Player Character and NonPlayerCharacter classes here
-class playerChar extends Character{
+class PlayerCharacter extends Character{
     constructor(id,name,x,y){
         super(id,name,x,y);
     }
 }
-class nonPlayerChar extends Character{
+class NonPlayerCharacter extends Character{
     constructor(id,name,x,y){
         super(id,name,x,y);
     }
@@ -28,12 +28,12 @@ function createPlayer(id, name) {
     // Write your code here
     const x= Math.floor(Math.random() *10);
     const y=Math.floor(Math.random()*10);
-    return new playerChar(id,name,x,y);
+    return new PlayerCharacter(id,name,x,y);
 }
 
 function createNonPlayer(id, name) {
     // Write your code here
     const x=Math.floor(Math.random()*10);
     const y=Math.floor(Math.random()*10);
-    return new nonPlayerChar(id,name,x,y);
+    return new NonPlayerCharacter(id,name,x,y);
 }
